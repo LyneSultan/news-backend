@@ -1,4 +1,3 @@
-/app/Http/Controllers
 /routes/api.php
 /.phpunit.cache
 /node_modules

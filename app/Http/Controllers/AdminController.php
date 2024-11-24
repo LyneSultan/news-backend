@@ -15,14 +15,13 @@ class AdminController extends Controller
 
     }
     function edit_news(Request $request,$id){
-        return "1";
         $news= News::find($id)->update([
         'title'=>$request->title,
         'content'=>$request->content,
         'age_restriction'=>$request->age
         ]);
         return response()->json([
-            "updated_course" => $news
+            "updated_news" => $news
         ]);
 
     }
@@ -37,7 +36,16 @@ class AdminController extends Controller
         $news->delete();
         $news=News::find($request->id)->delete();
         return response()->json([
-            "deleted_course" => $news
+            "deleted_news" => $news
         ]);
+    }
+    function restrict_news(Request $request,$id){
+        $news= News::find($id)->update([
+        'age_restriction'=>$request->age_restriction,
+        ]);
+        return response()->json([
+            "updated_news" => $news
+        ]);
+
     }
 }

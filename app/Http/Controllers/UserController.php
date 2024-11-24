@@ -19,7 +19,7 @@ class UserController extends Controller
 
     $userAge = $user->age;
 
-    $news = News::where('age_restriction', '<=', $userAge)->get();
+    $news = News::where('age_restriction', '<', $userAge)->get();
 
     return response()->json(['news' => $news]);
     }

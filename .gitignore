@@ -1,6 +1,5 @@
 /app/Http/Controllers
 /routes/api.php
-/database/migrations
 /.phpunit.cache
 /node_modules
 /public/build
